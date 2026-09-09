@@ -1,3 +1,5 @@
+
+
 function setup() {
   createCanvas(1200, 1200);
 }
@@ -13,7 +15,8 @@ function draw() {
 
   fill("#080809")
 
-  text(`corX: ${mouseX}, corY: ${mouseY}`, 1050, 50)
+  text(`corX: ${mouseX}, corY: ${mouseY}`, mouseX, mouseY+30)
+
   // removed the strokes for a more clean look.
   // comments will be in english as this is more manageable for me
 
@@ -26,16 +29,21 @@ function draw() {
 
   let flagX = 120
   let flagY = 110
+  let flagWidth = 30
+  let flagLength = 20
+
+  flagWidth = 120
+  flagX = 60
 
 
   fill("#000000")
-  rect(flagX, flagY, 40, 10)
+  rect(flagX, flagY, flagWidth, flagLength)
 
   fill("#ed3636")
-  rect(flagX, flagY+40, 40, 10)
+  rect(flagX, flagY+20, flagWidth, flagLength)
 
   fill("#e8c93e")
-  rect(flagX, flagY+80, 40, 10)
+  rect(flagX, flagY+40, flagWidth, flagLength)
 
   //
   // chessboard
@@ -68,9 +76,9 @@ function draw() {
   // changes color blend to ADD
   // color values from the shapes created after this line is called are added onto the ones already on the canvas
 
-  // blendMode(ADD)
-  fill("#c56a98")
-  quad(40, 20, 100, 20, 80, 80, 20, 80);
+  blendMode(ADD)
+  fill("#dc9abc26")
+  quad(500, 100, 620, 100, 570, 250, 470, 250);
   //
   //
   //
@@ -78,7 +86,8 @@ function draw() {
 
   // base colors (mostly black)
 
-  
+  blendMode(BLEND)
+
   let trafficPosX = 510
 
   fill("#080809")
@@ -122,30 +131,160 @@ function draw() {
   fill("#ffffff")
   circle(lightPosX, 530, 30)
   
-  fill("#efffa7")
+  fill("#ffffff")
   circle(lightPosX, 620, 30)
 
   //
   // dice. wip
   //
+  fill("#919faf");
+  square(45, 255, 160, 25);
 
-  fill("#efffa7");
+  fill("#919faf");
+  square(75, 255, 160, 25);
 
-  circle(440, 620, 30);
+  fill("#dedee8");
+  square(80, 260, 150, 20);
 
+  fill("#f3f3fa");
+  square(50, 260, 150, 20);
+
+
+  fill("#919faf");
+  circle(125, 335, 30)
+  circle(175, 385, 30)
+  circle(175, 285, 30)
+  circle(75, 385, 30)
+  circle(75, 285, 30)
+
+  let dotShading = 15
+
+  fill("#b5c2d0");
+  circle(125-5, 335-5, dotShading)
+  circle(175-5, 385-5, dotShading)
+  circle(175-5, 285-5, dotShading)
+  circle(75-5, 385-5, dotShading)
+  circle(75-5, 285-5, dotShading)
+
+
+  /*
   // mario
   fill("#e03333");
-  rect(670, 630, 100, 20)
-  rect(650, 650, 160, 20)
+  rect(770, 630, 100, 20)
+  rect(750, 650, 180, 20)
+
+  // marios skin
+  fill("#ffc194");
+  rect(770, 670, 120, 100)
+  rect(730, 690, 200, 40)
+  rect(750, 710, 200, 20)
   
   // marios hair
   fill("#90592f");
-  rect(650, 670, 60, 20)
-  rect(670, 670, 20, 60)
-  rect(630, 690, 20, 60)
-  rect(630, 690, 20, 60)
-  rect(630, 690, 20, 60)
+  rect(750, 670, 60, 20)
+  rect(770, 670, 20, 60)
+  rect(730, 690, 20, 60)
+  rect(730, 690, 20, 60)
+  rect(730, 690, 20, 60)
+  rect(730, 690, 20, 60)
+  rect(770, 710, 40, 20)
+  rect(730, 730, 40, 20)
+
+  // marios mustache
+
+  fill("#000000");
+  rect(850, 730, 80, 20)
+  rect(870, 710, 20, 20)
+  
+  rect(850, 670, 20, 40)
+
+  // mario's torso
+  // pretty much all of this is divided into blocks so i don't have to spend time calculating every pixel
+
+  fill("#3857c9");
+  rect(750, 790, 120, 40)
 
 
+  if there's an array below this just assume i've gotten lazy enough to loop back into doing this more efficiently
+
+  */
+
+  stroke(1);
+  noFill()
+
+  quad(80, 120, 120, 80, 160, 120);
+
+  noStroke();
+
+  const row = 16;
+  const column = 16;
+  let grid = [];
+  let size = 10;
+  let posX = 250;
+  let posY = 100;
+
+
+  // grid pretty much makes a 16 x 16 grid, like the name implies
+  // each number corresponds to a color, for example, 0 = black.
+
+  strokeWeight(1)
+
+  grid = [
+    [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 6, 6, 6, 2, 2, 5, 2, 0, 0, 0, 0, 0],
+    [0, 0, 0, 6, 2, 6, 2, 2, 2, 5, 2, 2, 2, 0, 0, 0],
+    [0, 0, 0, 6, 2, 6, 6, 2, 2, 2, 5, 2, 2, 2, 0, 0],
+    [0, 0, 0, 6, 6, 2, 2, 2, 2, 5, 5, 5, 5, 0, 0, 0],
+    [0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 1, 3, 1, 1, 3, 1, 1, 1, 0, 0, 0],
+    [0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 1, 1, 1, 1, 0, 0],
+    [0, 0, 2, 2, 1, 3, 4, 3, 3, 4, 3, 1, 2, 2, 0, 0],
+    [0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 0, 0],
+    [0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 0, 0],
+    [0, 0, 0, 0, 3, 3, 3, 0, 0, 3, 3, 3, 0, 0, 0, 0],
+    [0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 6, 6, 6, 0, 0, 0],
+    [0, 0, 6, 6, 6, 6, 0, 0, 0, 0, 6, 6, 6, 6, 0, 0]
+  ];
+
+  // i and j function as the x and y coordinates of each square, or since we're doing this in a grid, it's probably more akin to a cell.
+  // i and j increase in value everytime the loop is run i'm pretty sure.
+  // grid[i][j] then asks for the value of i and j. 
+  // therefore, grid[i][j] asks "give me the value at row 2, column 5" for example.
+  // if this value corresponds to one of the numbers, the fill for that cell will be set to that specific number.
+
+  // say that grid[i][j] calls for row 3, column 4.
+  // if the value of "4" is returned, then the if statements within the for loop will fill that cell with the corresponding color.
+  // the === sign indicates that a cell of the grid will only be filled with the corresponding color if the exact value is matched.
+  // therefore, 3.99 and 4.01 won't work, but i could be wrong, really.
+
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < column; j++) {
+      if (grid[i][j] === 0){
+        fill("#8787d1b0")
+      } 
+      if (grid[i][j] === 1){
+        fill("#d54040")
+      }
+      if (grid[i][j] === 2){
+        fill("#ffd5a4")
+      }
+      if (grid[i][j] === 3){
+        fill("#4056d3")
+      }
+      if (grid[i][j] === 4){
+        fill("#ffeb55")
+      }
+      if (grid[i][j] === 5){
+        fill("#000000")
+      }
+      if (grid[i][j] === 6){
+        fill("#844c35")
+      }
+
+      rect(posX + j * size, posY + i * size, size, size);
+    }
+  }
 }
 

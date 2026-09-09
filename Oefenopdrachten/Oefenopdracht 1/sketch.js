@@ -4,7 +4,7 @@ function setup() {
 
 function draw() {
   background(225);
-  strokeWeight(2.5);
+  strokeWeight(3);
 
   fill("#000000")
   fill("#dc2e2e")
@@ -12,11 +12,22 @@ function draw() {
   fill("#ffd91a")
   fill("#ffffff")
 
-  // rij 1 links
+  fill("#ffffff")
+  rect(2, 2, 298, 196.3)
+
+  fill("#ffffff")
+  rect(2, 2, 298, 170)
+
+  fill("#000000")
+  rect(2, 2, 308, 130)
+
+  fill("#dc2e2e")
+  rect(2, 2, 298, 122)
+
   fill("#4249c8")
   rect(2, 2, 50, 50)
 
-  fill("#ffffff")
+  fill("#ffd91a")
   rect(2, 52, 50, 20)
 
   fill("#dc2e2e")
@@ -31,7 +42,13 @@ function draw() {
   fill("#ffffff")
   rect(198, 182, 100, 17)
 
-  // rij 2 links
+
+
+  fill("#4249c8")
+  rect(100, 7, 103, 82)
+
+  fill("#ffffff")
+  rect(160, 1, 103, 79)
 
   fill("#ffffff")
   rect(52, 2, 50, 90)
@@ -51,25 +68,35 @@ function draw() {
   fill("#ffffff")
   rect(72, 132, 40, 40)
 
-  // mooie kubus rechts bovenin
+
+
   fill("#ffffff")
-  rect(198, 2, 100, 180)
+  rect(198, 2, 101, 180)
 
   fill("#ffd91a")
   rect(198, 2, 100, 90)
 
-  fill("#ff0000")
-  rect(198, 2, 150, 140)
+  fill("#dc2e2e")
+  rect(198, 1, 101, 141)
 
-  // mooie balk daaronder
+  fill("#dc2e2e")
+  rect(102, 1, 81, 79)
+
+  fill("#ffffff")
+  rect(160, 89, 40, 35)
+
+  fill("#ffffff")
+  rect(198, 80, 101, 141/2)
+
+  // rij 4-5 rechtsonder
   fill("#ffd91a")
   rect(198, 182, 100, 17)
 
   fill("#ffffff")
-  rect(198, 182, 100, 17)
+  rect(198, 183, 100, 17)
 
   fill("#dc2e2e")
-  rect(198, 182, 100, 17)
+  rect(198, 182, 101, 17)
 
 }
 
