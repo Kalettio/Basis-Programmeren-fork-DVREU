@@ -15,7 +15,7 @@ function draw() {
 
   fill("#080809")
 
-  text(`corX: ${mouseX}, corY: ${mouseY}`, mouseX, mouseY+30)
+  text(`corX: ${mouseX}, corY: ${mouseY}`, mouseX, mouseY + 30)
 
   // removed the strokes for a more clean look.
   // comments will be in english as this is more manageable for me
@@ -40,10 +40,10 @@ function draw() {
   rect(flagX, flagY, flagWidth, flagLength)
 
   fill("#ed3636")
-  rect(flagX, flagY+20, flagWidth, flagLength)
+  rect(flagX, flagY + 20, flagWidth, flagLength)
 
   fill("#e8c93e")
-  rect(flagX, flagY+40, flagWidth, flagLength)
+  rect(flagX, flagY + 40, flagWidth, flagLength)
 
   //
   // chessboard
@@ -55,12 +55,12 @@ function draw() {
   let cbY = 100
 
   fill("#15171d")
-  rect(cbBorX+370, cbBorY+50, 170, 170)
+  rect(cbBorX + 370, cbBorY + 50, 170, 170)
 
   cbBorX = 100
 
   fill("#d63e3e")
-  rect(cbBorX+370 , cbBgY+50, 150, 150)
+  rect(cbBorX + 370, cbBgY + 50, 150, 150)
 
   // changed cbY to 200 to accustom for the change in size between the border and the actual checkers
   // cbX is also changed to align the checkerboard more with the traffic light below it on the horizontal (x) axis
@@ -68,10 +68,10 @@ function draw() {
   cbX = cbX + 120
 
   fill("#2d303f")
-  rect(cbX+250, cbY+50, 50, 50)
-  rect(cbX+200, cbY, 50, 50)
-  rect(cbX+250, cbY-50, 50, 50)
-  rect(cbX+300, cbY, 50, 50)
+  rect(cbX + 250, cbY + 50, 50, 50)
+  rect(cbX + 200, cbY, 50, 50)
+  rect(cbX + 250, cbY - 50, 50, 50)
+  rect(cbX + 300, cbY, 50, 50)
 
   // changes color blend to ADD
   // color values from the shapes created after this line is called are added onto the ones already on the canvas
@@ -104,10 +104,10 @@ function draw() {
   // base traffic light colors
   fill("#aa3d5c")
   circle(lightPosX, 450, 70)
-  
+
   fill("#f5b453")
   circle(lightPosX, 540, 70)
-  
+
   fill("#49cc88")
   circle(lightPosX, 630, 70)
 
@@ -115,10 +115,10 @@ function draw() {
   // traffic light shading
   fill("#fa6156")
   circle(lightPosX, 450, 60)
-  
+
   fill("#f9ed6e")
   circle(lightPosX, 540, 60)
-  
+
   fill("#9cf26e")
   circle(lightPosX, 630, 60)
 
@@ -127,10 +127,10 @@ function draw() {
   // traffic light highlights 
   fill("#fa8f56")
   circle(lightPosX, 440, 30)
-  
+
   fill("#ffffff")
   circle(lightPosX, 530, 30)
-  
+
   fill("#ffffff")
   circle(lightPosX, 620, 30)
 
@@ -160,11 +160,11 @@ function draw() {
   let dotShading = 15
 
   fill("#b5c2d0");
-  circle(125-5, 335-5, dotShading)
-  circle(175-5, 385-5, dotShading)
-  circle(175-5, 285-5, dotShading)
-  circle(75-5, 385-5, dotShading)
-  circle(75-5, 285-5, dotShading)
+  circle(125 - 5, 335 - 5, dotShading)
+  circle(175 - 5, 385 - 5, dotShading)
+  circle(175 - 5, 285 - 5, dotShading)
+  circle(75 - 5, 385 - 5, dotShading)
+  circle(75 - 5, 285 - 5, dotShading)
 
 
   /*
@@ -263,30 +263,30 @@ function draw() {
 
   for (let i = 0; i < row; i++) {
     for (let j = 0; j < column; j++) {
-      if (grid[i][j] === 0){
+      if (grid[i][j] === 0) {
         fill("#8787d1b0")
-      } 
-      if (grid[i][j] === 1){
+      }
+      if (grid[i][j] === 1) {
         fill("#d54040")
       }
-      if (grid[i][j] === 2){
+      if (grid[i][j] === 2) {
         fill("#ffd5a4")
       }
-      if (grid[i][j] === 3){
+      if (grid[i][j] === 3) {
         fill("#4056d3")
       }
-      if (grid[i][j] === 4){
+      if (grid[i][j] === 4) {
         fill("#ffeb55")
       }
-      if (grid[i][j] === 5){
+      if (grid[i][j] === 5) {
         fill("#000000")
       }
-      if (grid[i][j] === 6){
+      if (grid[i][j] === 6) {
         fill("#844c35")
       }
 
       rect(posX + j * size, posY + i * size, size, size);
-      
+
     }
 
   }
@@ -332,42 +332,42 @@ function draw() {
 
   for (let i = 0; i < columnF; i++) {
     for (let j = 0; j < rowF; j++) {
-      if (gridF[i][j] === 0){
+      if (gridF[i][j] === 0) {
         fill("#8787d1b0")
-      } 
-      if (gridF[i][j] === 1){
+      }
+      if (gridF[i][j] === 1) {
         fill("#2c2122")
       }
-      if (gridF[i][j] === 2){
+      if (gridF[i][j] === 2) {
         fill("#ffffff")
       }
-      if (gridF[i][j] === 3){
+      if (gridF[i][j] === 3) {
         fill("#e2336e")
       }
-      if (gridF[i][j] === 4){
+      if (gridF[i][j] === 4) {
         fill("#d08f7a")
       }
-      if (gridF[i][j] === 5){
+      if (gridF[i][j] === 5) {
         fill("#ffc0a7")
       }
-      if (gridF[i][j] === 6){
+      if (gridF[i][j] === 6) {
         fill("#ee9dae")
       }
-      if (gridF[i][j] === 7){
+      if (gridF[i][j] === 7) {
         fill("#5d7af0")
       }
-      if (gridF[i][j] === 8){
+      if (gridF[i][j] === 8) {
         fill("#f0c95d")
       }
-      if (gridF[i][j] === 91){
+      if (gridF[i][j] === 91) {
         fill("#ccd2d8")
       }
-      if (gridF[i][j] === 9){
+      if (gridF[i][j] === 9) {
         fill("#75748b")
       }
 
       rect(posXF + j * sizeF, posYF + i * sizeF, sizeF, sizeF);
-      
+
     }
 
     text("vlag", 100, 100)
@@ -377,7 +377,6 @@ function draw() {
     text("house", 100, 580)
     text("traffic light", 500, 370)
     text("character 2 (ness - earthbound)", 770, 280)
-
   }
 }
 
