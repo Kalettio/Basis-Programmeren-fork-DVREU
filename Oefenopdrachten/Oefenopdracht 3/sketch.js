@@ -4,7 +4,7 @@ function setup() {
 }
 
 let x = 1;
-
+let teller = 0;
 
 function draw() {
   background("#f7f4f4");
@@ -51,7 +51,16 @@ function draw() {
 
 
 
-  
+  teller++;
+
+  if (keyCode === 32) {
+    teller = 0;
+  }
+
+  fill(0);
+  textSize(30);
+  text(teller, 20, 140);
+
 
   text(x, 50, 50)
 
