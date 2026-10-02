@@ -44,8 +44,7 @@ function draw() {
       scaleDown: random(1, 5),
 
       state: "upscale",
-      // i was gonna use this to handle when they shrink and grow but it didnt really work
-      // kept it in though
+      // WHY THE FUCK WONT YOU WORK
 
       angle: 0,
 
@@ -86,6 +85,8 @@ function draw() {
     rotate(s.angle);
 
     // cycle through all the shape types
+    // at this point in timne im hella fucking convinced there is no god and all religion is objectively false because if there was THIS WOULD WORK
+    // WHAT THE FUCK ARE YOU DOING
 
     if (s.type ===  "circle") {
       ellipse(0, 0, s.size);
@@ -99,7 +100,6 @@ function draw() {
       let triHeight = s.size * Math.sqrt(3) / 2;
 
       // i graduated math with atleast a 96 and yet i still cant tell you how the fuck this makes a triangle
-      // dont question just accept it at this point honestly
       triangle(0, 0 - triHeight/3, 0 - s.size/3, 0 + triHeight/3, 0 + s.size/3, 0 + triHeight/3);
     }
 
@@ -115,7 +115,7 @@ function draw() {
     }
 
     if (s.state === "upscale") {
-      // grow my little shape grow
+      // if this shit wont start growing right hte FUCK now im going to KILL MYSELF
       s.size += s.scaleUp;
 
       // shape will not exceed peak size
@@ -139,7 +139,7 @@ function draw() {
       shapes.splice(i, 1);
     }
 
-    // kill all the invisible ones
+    // removes invisible shapes
   } 
 }
 
